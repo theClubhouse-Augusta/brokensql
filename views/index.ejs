@@ -16,21 +16,17 @@
 <body>
     <form method="POST" name="myform" action="/register">
         <table>
-            <tr>
-        <th> Enter user ID</th>
-            <td><input type="text" name="id" id="identification" required minlength="8"></td>
-        </tr>
         <tr>
             <th> Enter full name</th>
-                <td><input type="text" name="name" id="names" required minlength="4"></td>
+                <td><input type="text" name="name" id="names" required minlength="4" pattern="[^-']([a-zA-ZÀ-ÖØ-öø-ÿ '-](?!.*''|--|  |- |' | '| -.*))+"></td>
             </tr>
             <tr>
                 <th> Enter email</th>
-                    <td><input type="email" name="email" id="emails" required minlength="8"></td>
+                    <td><input type="email" name="email" id="emails" required minlength="8" pattern="([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})"></td>
                 </tr>
                 <tr>
                     <th> Enter username</th>
-                        <td><input type="text" name="username" id="username" required minlength="6"></td>
+                        <td><input type="text" name="username" id="username" required minlength="6"pattern="[^-']([a-zA-ZÀ-ÖØ-öø-ÿ0-9 '-](?!.*''|--|  |- |' | '| -.*))+"></td>
                     </tr>
                     <tr>
                         <td colspan = "2"><input type="submit" value="submit"></td>

@@ -27,6 +27,7 @@ var connection = mysql.createConnection({
 
   
 app.post("/register",[
+  
   check("name")
   //no empty space
   .trim()
@@ -86,13 +87,13 @@ app.post("/register",[
   else {
     //if correct insert in to customer
     let insert = "insert into customer(??, ??, ??) values (?, ?, ?)";
-    connection.query(insert, [ "name", "username", "email",name, username, email], (err,results)=> {
+    connection.query(insert, [ "name", "username", "email", name, username, email], (err,results)=> {
       //if doesnt work go back
       if (err) {
         console.log(err);
     }
     let success = `Thank you!`
-    res.render("index", { success, name, username, email });
+    res.send(`thank you for registering ${name}!`)
     });
   }
 });
